@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--sapBackgroundColor, #f5f6f7);
+  color: var(--sapTextColor, #32363a);
+  font-family: "72", "SAP-icons", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.app__card {
+  width: 100%;
+  max-width: 44rem;
+}
+
+/* Add task ---------------------------------------------------------------- */
+
+.add-task {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.add-task__input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.add-task__button {
+  flex: 0 0 auto;
+}
+
+/* Filter bar -------------------------------------------------------------- */
+
+.filter-bar {
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--sapList_BorderColor, #d9d9d9);
+}
+
+/* Task list --------------------------------------------------------------- */
+
+.todo-list {
+  padding: 0.5rem 0;
+}
+
+.todo-item--completed::part(title) {
+  text-decoration: line-through;
+  color: var(--sapContent_LabelColor, #6a6d70);
+}
+
+.todo-item--completed::part(description) {
+  text-decoration: line-through;
+}
+
+/* Counter ----------------------------------------------------------------- */
+
+.remaining {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--sapList_BorderColor, #d9d9d9);
+}
+
+@media (max-width: 30rem) {
+  .app {
+    padding: 1rem 0.5rem;
+  }
+
+  .add-task {
+    flex-wrap: wrap;
+  }
+
+  .add-task__input {
+    flex-basis: 100%;
+  }
+}
